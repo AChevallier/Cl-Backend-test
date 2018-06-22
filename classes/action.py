@@ -5,10 +5,11 @@ class Action(object):
             param1 (object): Object step link to this action
             param2:"""
     def __init__(self, step ,arg):
-        self.arg = arg
-        self.step = step
-        self.type = arg.type
-        self.answer_text = arg.answer_text
+        pass
+        # self.arg = arg
+        # self.step = step
+        # self.type = arg.type
+        # self.answer_text = arg.answer_text
 
     def answer(self):
         print(self.answer_text)
