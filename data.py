@@ -5,7 +5,7 @@ Scenario1 = {
         'name': 'greetings',
         'actions': [{
             'type': 'text',
-            'answer_text': 'Hi, how are you ?'
+            'data': 'Hi, how are you ?'
         }],
         'connections': [{
             'condition': 'fine',
@@ -19,14 +19,14 @@ Scenario1 = {
         'name': 'everything OK',
         'actions': [{
             'type': 'text',
-            'answer_text': 'Cool'
+            'data': 'Cool'
         }],
     }, {
         'id': 3,
         'name': 'questionning',
         'actions': [{
             'type': 'text',
-            'answer_text': 'Why ?'
+            'data': 'Why ?'
         }],
         'connections': [{
             'condition': ['bad', 'day'],
@@ -35,10 +35,13 @@ Scenario1 = {
     }, {
         'id': 4,
         'name': 'giving happiness',
-        'actions': [{
+        'actions': [
+        {
+            'type': 'text',
+            'data': 'Look at that'
+        },{
             'type': 'image',
-            'answer_text': None,
-            'url_data': 'https://i.imgur.com/4QvA1xc.gif'
+            'data': 'https://i.imgur.com/4QvA1xc.gif'
         }]
     }, ]
 }
