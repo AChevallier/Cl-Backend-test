@@ -2,8 +2,12 @@ import argparse
 from classes.bot import Bot
 
 parser = argparse.ArgumentParser()
-parser.add_argument("echo")
+parser.add_argument(
+    "-m",
+    "--mode",
+    help="please put your choice mode cli or http (default = cli)",
+    type=str,
+    default='cli'
+)
 args = parser.parse_args()
-print(args.echo)
-
-Bot()
+Bot(args.mode)
