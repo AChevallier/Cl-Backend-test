@@ -4,7 +4,7 @@ class ActionHTTP(ActionType):
 
     def output_message(self, message):
         message_show = '(sending HTTP request {"text" : "%s" })' % (message)
-        print(self.START_BOT % (message))
+        print(self.START_BOT % (message_show))
 
     """
         Should return a url image from the bot to the user
@@ -12,4 +12,4 @@ class ActionHTTP(ActionType):
     """
     def output_image(self, image):
         message_show = '(sending HTTP request {"image_url" : "%s" })' % (image)
-        print(self.START_BOT % (image))
+        print(self.START_BOT % (message_show))
