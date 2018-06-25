@@ -3,11 +3,6 @@ from classes.connection import Connection
 
 
 class Step(object):
-    """docstring for Step.
-
-     Args:
-            param1 (object): Object step link to this connection
-            param2:"""
 
     def __init__(self, scenario, data_step):
         self.scenario = scenario
@@ -15,6 +10,7 @@ class Step(object):
         self.name = data_step.get('name')
         self.actions = None
         self.connections = None
+        #Loading data
         if 'actions' in data_step:
             self.actions = self._load_actions(data_step.get('actions'))
         if 'connections' in data_step:
@@ -22,10 +18,19 @@ class Step(object):
                 data_step.get('connections'))
 
     def launch_actions(self):
+        '''
+        launch each action one by one
+        and then launch the connections
+        '''
         for action in self.actions:
             action.answer()
-
+        if self.connections:
+            self.launch_connections()
     def launch_connections(self):
+        '''
+        Get the message from user
+        and launch the connection
+        '''
         input = self.scenario.bot.get_new_message()
         for connection in self.connections:
             connection.launch_connection(input)
